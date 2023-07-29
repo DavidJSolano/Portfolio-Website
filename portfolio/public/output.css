@@ -773,6 +773,24 @@ video {
   border-bottom-right-radius: 0.125rem;
 }
 
+.border{
+  border-width: 1px;
+}
+
+.border-dashed{
+  border-style: dashed;
+}
+
+.border-r-amber-900{
+  --tw-border-opacity: 1;
+  border-right-color: rgb(120 53 15 / var(--tw-border-opacity));
+}
+
+.border-l-emerald-400{
+  --tw-border-opacity: 1;
+  border-left-color: rgb(52 211 153 / var(--tw-border-opacity));
+}
+
 .bg-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(44 188 233 / var(--tw-bg-opacity));

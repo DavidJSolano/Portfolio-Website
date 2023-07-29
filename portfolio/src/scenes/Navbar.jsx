@@ -2,7 +2,7 @@ import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 
-const Link = ({ page, selectedPage, setSetSelectedPage }) => {
+const Link = ({ page, selectedPage, setSelectedPage }) => {
   const lowerCasePage = page.toLowerCase();
   return (
     <AnchorLink
@@ -10,14 +10,14 @@ const Link = ({ page, selectedPage, setSetSelectedPage }) => {
         selectedPage === lowerCasePage ? "text-yellow" : ""
       } hover:text-yellow transition duration-500`}
       href={`#${lowerCasePage}`}
-      onClick={() => setSetSelectedPage(lowerCasePage)}
+      onClick={() => setSelectedPage(lowerCasePage)}
     >
       {page}
     </AnchorLink>
   );
 };
 
-const Navbar = ({ isTopOfPage, selectedPage, setSetSelectedPage }) => {
+const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const navBackground = isTopOfPage ? "" : "bg-red";
@@ -32,27 +32,27 @@ const Navbar = ({ isTopOfPage, selectedPage, setSetSelectedPage }) => {
             <Link
               page="Home"
               selectedPage={selectedPage}
-              setSetSelectedPage={setSetSelectedPage}
+              setSelectedPage={setSelectedPage}
             />
             <Link
               page="Skills"
               selectedPage={selectedPage}
-              setSetSelectedPage={setSetSelectedPage}
+              setSelectedPage={setSelectedPage}
             />
             <Link
               page="Project"
               selectedPage={selectedPage}
-              setSetSelectedPage={setSetSelectedPage}
+              setSelectedPage={setSelectedPage}
             />
             <Link
               page="Testimonials"
               selectedPage={selectedPage}
-              setSetSelectedPage={setSetSelectedPage}
+              setSelectedPage={setSelectedPage}
             />
             <Link
               page="Contact"
               selectedPage={selectedPage}
-              setSetSelectedPage={setSetSelectedPage}
+              setSelectedPage={setSelectedPage}
             />
           </div>
         ) : (
@@ -78,27 +78,27 @@ const Navbar = ({ isTopOfPage, selectedPage, setSetSelectedPage }) => {
               <Link
                 page="Home"
                 selectedPage={selectedPage}
-                setSetSelectedPage={setSetSelectedPage}
+                setSelectedPage={setSelectedPage}
               />
               <Link
                 page="Skills"
                 selectedPage={selectedPage}
-                setSetSelectedPage={setSetSelectedPage}
+                setSelectedPage={setSelectedPage}
               />
               <Link
                 page="Project"
                 selectedPage={selectedPage}
-                setSetSelectedPage={setSetSelectedPage}
+                setSelectedPage={setSelectedPage}
               />
               <Link
                 page="Testimonials"
                 selectedPage={selectedPage}
-                setSetSelectedPage={setSetSelectedPage}
+                setSelectedPage={setSelectedPage}
               />
               <Link
                 page="Contact"
                 selectedPage={selectedPage}
-                setSetSelectedPage={setSetSelectedPage}
+                setSelectedPage={setSelectedPage}
               />
             </div>
           </div>
