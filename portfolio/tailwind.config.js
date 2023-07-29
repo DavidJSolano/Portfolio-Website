@@ -15,9 +15,9 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         "gradient-rainbow":
-          "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%",
-        "gradient-rainbow":
-          "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.05%, #FFBA00 117.07%",
+          "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%)",
+        "gradient-rainblue":
+          "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.39%, #FFBD0C 117.73%)",
       }),
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
@@ -25,14 +25,14 @@ module.exports = {
       },
       content: {
         brush: "url('./assets/brush.png')",
-        brush: "url('./assets/person-1.png')",
-        brush: "url('./assets/person-2.png')",
-        brush: "url('./assets/person-3.png')",
+        person1: "url('./assets/person-1.png')",
+        person2: "url('./assets/person-2.png')",
+        person3: "url('./assets/person-3.png')",
       },
       screens: {
         xs: "480px",
         sm: "768px",
-        md: "1060xp",
+        md: "1060px",
       },
     },
   },
