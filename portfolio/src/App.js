@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 import Landing from "./scenes/Landing";
 import Navbar from "./scenes/Navbar";
+import Projects from "./scenes/Projects";
 import DotGroup from "./scenes/DotGroup";
 import LineGradient from "./components/LineGradient.jsx";
 import MySkills from "./scenes/MySkills.jsx";
+import Contact from "./scenes/Contact.jsx";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -35,8 +37,15 @@ function App() {
         <Landing setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 mx-auto">
         <MySkills />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto">
+        <Projects />
+      </div>
+      <div className="w-5/6 mx-auto md:h-full">
+        <Contact />
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const MySkills = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   return (
-    <section id="skills" className="pt-10 pb-24">
+    <section id="skills" className="pt-8 pb-24">
       <div className="md:flex md:justify-between md:gap-16 mt-32">
         <motion.div
           className="md:w-1/3"
@@ -23,7 +23,6 @@ const MySkills = () => {
           </p>
           <LineGradient width="w-1/3" />
           <p className="mt-10 mb-7">
-            {" "}
             Eager to embrace new challenges and technologies, I thrive in
             collaborative environments and am dedicated to making a positive
             impact through the art of programming.
@@ -36,13 +35,13 @@ const MySkills = () => {
                 before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]"
             >
               <img
-                alt="profile"
+                alt="skills"
                 className="z-10"
                 src="assets/skills-image.png"
               ></img>
             </div>
           ) : (
-            <img alt="profile" className="z-10" src="assets/skills-image.png" />
+            <img alt="skills" className="z-10" src="assets/skills-image.png" />
           )}
         </div>
       </div>
@@ -109,7 +108,7 @@ const MySkills = () => {
         </motion.div>
         {/* Languages */}
         <motion.div
-          className="md:w-1/3 mt-10"
+          className="md:w-1/3 mt-10 mb"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -132,12 +131,11 @@ const MySkills = () => {
             My skillset encompasses a vast array of{" "}
             <strong>programming languages</strong>, including{" "}
             <strong>
-              C++, C, Python, JavaScript (as well as TypeScript), Java, and
-              Golang
+              C++, C, Python, JavaScript, TypeScript, Java, and Golang
             </strong>
             . For front-end website development, I utilize frameworks/libraries
             like <strong>React and Svelte</strong>, and I understand{" "}
-            <strong>HTML, CSS (and Tailwind CSS)</strong>.
+            <strong>HTML, CSS, and Tailwind CSS</strong>.
           </p>
         </motion.div>
       </div>
