@@ -7,6 +7,7 @@ import DotGroup from "./scenes/DotGroup";
 import LineGradient from "./components/LineGradient.jsx";
 import MySkills from "./scenes/MySkills.jsx";
 import Contact from "./scenes/Contact.jsx";
+import Footer from "./scenes/Footer.jsx";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -44,9 +45,11 @@ function App() {
       <div className="w-5/6 mx-auto">
         <Projects />
       </div>
+      <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
         <Contact />
       </div>
+      <Footer />
     </div>
   );
 }

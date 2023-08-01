@@ -28,7 +28,7 @@ const Project = ({ title, subtitle = "Work in Progress" }) => {
 };
 const Projects = () => {
   return (
-    <section id="projects" className="py-36">
+    <section id="projects" className="py-28">
       <motion.div
         className="md:w-2/5 mx-auto text-center"
         initial="hidden"
@@ -68,9 +68,10 @@ const Projects = () => {
             className="flex justify-center text-center items-center p-10 bg-red
           max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
-            Sleek User Interfaces
+            Continuously Learning.
           </div>
           <a
+            className="max-w-[400px] max-h-[400px]"
             href="https://github.com/DavidJSolano/WeatherApp"
             target="_blank"
             rel="noreferrer"
@@ -81,6 +82,7 @@ const Projects = () => {
             ></Project>
           </a>
           <a
+            className="max-w-[400px] max-h-[400px]"
             href="https://github.com/DavidJSolano/BreastCancerPredictor"
             target="_blank"
             rel="noreferrer"
@@ -92,6 +94,7 @@ const Projects = () => {
           </a>
           {/* Row 2 */}
           <a
+            className="max-w-[400px] max-h-[400px]"
             href="https://github.com/DavidJSolano/acmcsuf.com"
             target="_blank"
             rel="noreferrer"
@@ -102,6 +105,7 @@ const Projects = () => {
             ></Project>
           </a>
           <a
+            className="max-w-[400px] max-h-[400px]"
             href="https://github.com/DavidJSolano/pathfind"
             target="_blank"
             rel="noreferrer"
@@ -119,7 +123,7 @@ const Projects = () => {
             className="flex justify-center text-center items-center p-10 bg-red
           max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
-            Projects
+            All the time.
           </div>
         </motion.div>
       </div>
