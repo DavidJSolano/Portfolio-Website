@@ -2,6 +2,7 @@
 My up-to-date portfolio website. Technologies used: React, JavaScript, Tailwind CSS, Framer Motion.
 
 Link to website:
+https://davidjsolano.vercel.app/
 
 # Sample of Landing:
 
