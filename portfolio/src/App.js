@@ -16,6 +16,11 @@ function App() {
     const handleScroll = () => {
       if (window.scrollY === 0) setTopOfPage(true);
       if (window.scrollY !== 0) setTopOfPage(false);
+      if (window.scrollY < 650) setSelectedPage("home");
+      else if (window.scrollY >= 650 && window.scrollY < 1400)
+        setSelectedPage("skills");
+      else if (window.scrollY < 3100) setSelectedPage("projects");
+      else setSelectedPage("contact");
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
