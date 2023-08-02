@@ -1,5 +1,6 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const container = {
   hidden: {},
@@ -12,21 +13,47 @@ const projectVariant = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: { opacity: 1, scale: 1 },
 };
-const Project = ({ title, subtitle = "Work in Progress" }) => {
+const Project = ({
+  title,
+  subtitle = "Work in Progress",
+  isAboveSmallScreens,
+}) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
   bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
   return (
-    <motion.div variants={projectVariant} className="!relative">
-      <div className={overlayStyles}>
-        <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7">{subtitle}</p>
-      </div>
-      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
-    </motion.div>
+    <>
+      {isAboveSmallScreens && (
+        <motion.div variants={projectVariant} className="!relative">
+          <div className={overlayStyles}>
+            <p className="text-2xl font-playfair">{title}</p>
+            <p className="mt-7">{subtitle}</p>
+          </div>
+          <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+        </motion.div>
+      )}
+      {!isAboveSmallScreens && (
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          variants={projectVariant}
+          className="!relative"
+        >
+          <div className={overlayStyles}>
+            <p className="text-2xl font-playfair">{title}</p>
+            <p className="mt-7">{subtitle}</p>
+          </div>
+          <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+        </motion.div>
+      )}
+    </>
   );
 };
 const Projects = () => {
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+
   return (
     <section id="projects" className="py-28">
       <motion.div
@@ -79,7 +106,8 @@ const Projects = () => {
             <Project
               title="Weather App"
               subtitle="A JS-oriented app that utilizes the Open Weather API to display the weather at any given city"
-            ></Project>
+              isAboveSmallScreens={isAboveSmallScreens}
+            />
           </a>
           <a
             className="max-w-[400px] max-h-[400px]"
@@ -90,7 +118,8 @@ const Projects = () => {
             <Project
               title="Breast Cancer Predictor"
               subtitle="A machine learning script that predicts whether a breast cell is malignant or benign (Mounted on Google Colabs)"
-            ></Project>
+              isAboveSmallScreens={isAboveSmallScreens}
+            />
           </a>
           {/* Row 2 */}
           <a
@@ -102,7 +131,8 @@ const Projects = () => {
             <Project
               title="ACM CSUF"
               subtitle="Contributor to the OSS project, acmcsuf.com. The largest programming community at CSUF's website!"
-            ></Project>
+              isAboveSmallScreens={isAboveSmallScreens}
+            />
           </a>
           <a
             className="max-w-[400px] max-h-[400px]"
@@ -113,12 +143,22 @@ const Projects = () => {
             <Project
               title="Path find"
               subtitle="A path finding visualizer showing popular algorithms such as Dijkstra's SPA and more!"
-            ></Project>
+              isAboveSmallScreens={isAboveSmallScreens}
+            />
           </a>
-          <Project title="WIP"></Project>
+          <Project
+            title="WIP"
+            isAboveSmallScreens={isAboveSmallScreens}
+          ></Project>
           {/* Row 3 */}
-          <Project title="WIP"></Project>
-          <Project title="WIP"></Project>
+          <Project
+            title="WIP"
+            isAboveSmallScreens={isAboveSmallScreens}
+          ></Project>
+          <Project
+            title="WIP"
+            isAboveSmallScreens={isAboveSmallScreens}
+          ></Project>
           <div
             className="flex justify-center text-center items-center p-10 bg-red
           max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"

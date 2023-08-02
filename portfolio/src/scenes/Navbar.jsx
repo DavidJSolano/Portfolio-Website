@@ -1,9 +1,16 @@
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { motion } from "framer-motion";
 
-const Link = ({ page, selectedPage, setSelectedPage }) => {
+const Link = ({
+  page,
+  selectedPage,
+  setSelectedPage,
+  isAboveSmallScreens = true,
+}) => {
   const lowerCasePage = page.toLowerCase();
+
   return (
     <AnchorLink
       className={`${
@@ -13,6 +20,19 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
       onClick={() => setSelectedPage(lowerCasePage)}
     >
       {page}
+      {!isAboveSmallScreens && selectedPage === lowerCasePage && (
+        <motion.div
+          className="h-1 mt-4 bg-gradient-rainblue w-[240px] float-right"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          variants={{
+            hidden: { opacity: 0, x: 100 },
+            visible: { opacity: 1, x: 0 },
+          }}
+        />
+      )}
     </AnchorLink>
   );
 };
@@ -74,21 +94,25 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                 page="Home"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
+                isAboveSmallScreens={isAboveSmallScreens}
               />
               <Link
                 page="Skills"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
+                isAboveSmallScreens={isAboveSmallScreens}
               />
               <Link
                 page="Projects"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
+                isAboveSmallScreens={isAboveSmallScreens}
               />
               <Link
                 page="Contact"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
+                isAboveSmallScreens={isAboveSmallScreens}
               />
             </div>
           </div>
